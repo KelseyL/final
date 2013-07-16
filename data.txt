@@ -1,0 +1,1 @@
+a:4:{s:7:"bicycle";i:75;s:7:"vehicle";i:40;s:7:"transit";i:40;s:4:"walk";i:30;}

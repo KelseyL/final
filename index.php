@@ -1,6 +1,22 @@
 <?php
+	$transport["walk"] = 30;
+	$transport["bicycle"] = 75;
+	$transport["transit"] = 40;
+	$transport["vehicle"] = 40;
 
-	//include("");
+	$total = 0;	
+
+	arsort($transport);
+
+	foreach ($transport as $trans) {
+		$total += $trans;
+	}
+
+	foreach ($transport as $type => $trans) {
+		$perc[$type] = round($trans / $total * 100);
+	}
+
+	include("mail.php");
 
 ?><!doctype html>
 <html>
@@ -43,16 +59,18 @@
 				<a class="twitt" href="#">Twitter</a><a class="fb" href="#">Facebook</a><a class="goog" href="#">Google</a>
 				<p>This is where you give us your info. If you write us a really sweet 	message or maybe have an idea for what to survey next, write it here.</p> 
 				<p>Leave us your email and we'll let you know how cool your are and send 	you the updated results after you've voted!</p>
-				<form>
+				<form action="mail.php" method="post">
 					<li><label for="name">Name</label><input class="info" type="text" name="name" value=""></li>
 					<li><label for="email">Email</label><input class="info" type="text" name="email" value=""></li>		
-					<li><label for="message">Message</label><textarea class="info" rows="4" cols="30"></textarea></li>
+					<li><label for="message">Message</label><textarea class="info" name="message" rows="4" cols="30"></textarea></li>
 				</form>
 				<input id="send" type="submit" name="" value="Send">	
 			</section>
 	
 			<section id="poll">
 				<h2>Take The Survey</h2>
+				<p>This is it. Decision time. You have to make up your mind. Just be honest. True to who you are and how you get around. You do what you do, because that's what you want to do.</p>
+				<p>It's every Canadian's right to have the chance to vote. Here's yours.</p>
 				<h3>Vote from the options below:</h3>
 				<form>
 					<label for="walk">Walk</label>
@@ -63,13 +81,48 @@
 					<input type="radio" name="transport" value="transit"></br>
 					<label for="walk">Vehicle</label>
 					<input type="radio" name="transport" value="vehicle"></br>
-				</form>	
+				</form>
+
+				<?php
+
+					$file = "data.txt";
+					$handle = fopen($file, "w+") or exit("Can't open file: ".$file);
+
+					$poll = serialize($transport);
+
+					fwrite($handle, $poll);
+
+					$display = file_get_contents($file);
+					$display = unserialize($display);
+
+				?>
+
 			</section>
 	
 			<section id="results">
 				<h2>Survey Results</h2>
 				<p>Here are the results we've gathered so far! Ponder its uses and 	information for projects of your own or just keep refreshing and watch 	them grow!</p>
-				PHPHPHPHPHPHPHPHPHP!!
+
+				<?php 
+
+					$i = 1;
+
+					foreach ($transport as $type => $trans) {
+
+						if($i == 1){
+							$first = " blue";
+						}else{
+							$first = "";
+						}
+
+						echo "\t<div class ='item".$first."' style ='width: ".$perc[$type]."%;'>".$type." ".$perc[$type]."%</div></br>\r\n";
+			
+						$i++;
+				}			
+
+					echo "\t<p>Total votes: ".$total."</p>\r\n";
+				?>
+
 			</section>
 
 		</div>	

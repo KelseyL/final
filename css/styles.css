@@ -41,9 +41,8 @@ ul li a {
 	color:#999999;
 }
 
-ul li a:active {
+ul li:active {
 	color:#4092ff;
-
 }
 
 ul li:hover {
@@ -151,6 +150,21 @@ h3 {
 	color:#999999;
 	font-size:14px;
 	margin-top:0px;
+}
+
+.item {
+	height: 16px;
+	background-color: #999999;
+	color:white;
+	font-size:12px;
+	padding-top:4px;
+	padding-right:4px;
+	text-align:right;
+	border-radius:25px;
+}
+
+.blue {
+	background-color: #4092ff;
 }
 
 .goog, .twitt, .fb{
