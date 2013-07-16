@@ -1,0 +1,179 @@
+body {
+	font-family:Helvetica, Arial, sans-serif;
+}
+
+#container {
+	min-width:320px;
+	max-width:480px;
+	margin:0 auto;
+
+}
+
+header {
+	width:100%;
+	background-color:#4092ff;
+}
+
+h1 {
+	font-size:51px;
+	margin:0px;
+	padding-top:10px;
+	color:white;
+	text-align:center;
+}
+
+ul {
+ width:100%;
+ list-style-type:none;
+ margin:0px;
+ padding:9px 0px 6px 0px;
+ background-color:white;
+ border-bottom:1px solid #999999;
+}
+
+ul li {
+ display:inline;
+ padding:9px 16px 6px 16px;
+}
+
+ul li a {
+	text-decoration:none;
+	color:#999999;
+}
+
+ul li a:active {
+	color:#4092ff;
+
+}
+
+ul li:hover {
+	background-color:#dedede;
+}
+
+h2 {
+	font-size:18px;
+	color:#4092ff;
+	margin-top:8px;
+	display:inline-block;
+}
+
+#content {
+	min-width:320px;
+	max-width:480px;
+	margin:0 auto;
+}
+
+#about p {
+	color:#999999;
+	font-size:14px;
+	margin-top:0px;
+}
+
+#contact p {
+	color:#999999;
+	font-size:14px;
+	margin-top:0px;
+}
+
+#contact form {
+	color:#999999;
+	font-size:14px;
+	margin:0px;
+	padding-bottom:15px; 
+	text-align:right;
+	margin:0 auto;
+}
+
+#contact form li {
+	margin:0 auto;
+	list-style-type:none;
+	height: auto;
+	overflow: hidden;
+	text-align:right;
+}
+
+#contact label {
+	padding-right:5px;
+	display:inline-block;
+}
+
+.info {
+	width:245px;
+	background-color:white;
+	border:1px solid #999999;
+	color:#4092ff;
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:13px;
+	display:block;
+	float:right;
+}
+
+#name {
+	float:right;
+	padding-right:5px;
+}
+
+h3 {
+	color:#999999;
+	font-size:14px;
+	margin-top:0px
+}
+
+#poll p {
+	color:#999999;
+	font-size:14px;
+	margin-top:0px;
+}
+
+#poll label {
+	color:#999999;
+	font-size:14px;
+	margin-top:0px;
+	margin-left:50px;
+}
+
+#poll input {
+	color:#4092ff;
+	display:inline-block;
+	float:right;
+	margin-right:200px;
+}
+
+#send {
+	float:right;
+	margin-left:200px;
+	margin-right:5px;
+	padding:0px 10px;
+	display:block;
+}
+
+#results p {
+	color:#999999;
+	font-size:14px;
+	margin-top:0px;
+}
+
+.goog, .twitt, .fb{
+	background: url(../sprites/sprites.png) no-repeat;
+	display:inline-block;
+	float:right;
+	text-indent:-99999px;
+}
+
+.goog{
+	background-position: -18px 0;
+	width: 18px;
+	height: 18px;
+}
+
+.twitt{
+	background-position: -36px -0.0000152587890625px ;
+	width: 18px;
+	height: 18px;
+}
+
+.fb{
+	background-position: 0 0;
+	width: 18px;
+	height: 18px;
+}
