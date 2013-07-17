@@ -1,20 +1,20 @@
 <?php
-	$transport["walk"] = 30;
-	$transport["bicycle"] = 75;
-	$transport["transit"] = 40;
-	$transport["vehicle"] = 40;
+	// $transport["walk"] = 30;
+	// $transport["bicycle"] = 75;
+	// $transport["transit"] = 40;
+	// $transport["vehicle"] = 40;
 
-	$total = 0;	
+	// $total = 0;	
 
-	arsort($transport);
+	// arsort($transport);
 
-	foreach ($transport as $trans) {
-		$total += $trans;
-	}
+	// foreach ($transport as $trans) {
+	// 	$total += $trans;
+	// }
 
-	foreach ($transport as $type => $trans) {
-		$perc[$type] = round($trans / $total * 100);
-	}
+	// foreach ($transport as $type => $trans) {
+	// 	$perc[$type] = round($trans / $total * 100);
+	// }
 
 	include("mail.php");
 
@@ -63,8 +63,9 @@
 					<li><label for="name">Name</label><input class="info" type="text" name="name" value=""></li>
 					<li><label for="email">Email</label><input class="info" type="text" name="email" value=""></li>		
 					<li><label for="message">Message</label><textarea class="info" name="message" rows="4" cols="30"></textarea></li>
+					<input id="sendbutton" class="send" type="submit" name="" value="Send">
 				</form>
-				<input id="send" type="submit" name="" value="Send">	
+					
 			</section>
 	
 			<section id="poll">
@@ -73,27 +74,30 @@
 				<p>It's every Canadian's right to have the chance to vote. Here's yours.</p>
 				<h3>Vote from the options below:</h3>
 				<form>
-					<label for="walk">Walk</label>
-					<input type="radio" name="transport" value="walk"></br>
-					<label for="walk">Bicycle</label>
-					<input type="radio" name="transport" value="bicylce"></br>
-					<label for="walk">Transit</label>
-					<input type="radio" name="transport" value="transit"></br>
-					<label for="walk">Vehicle</label>
-					<input type="radio" name="transport" value="vehicle"></br>
+					<li><label for="walk">Walk</label>
+					<input type="radio" name="transport" value="walk"></li></br>
+					<li><label for="walk">Bicycle</label>
+					<input type="radio" name="transport" value="bicylce"></li></br>
+					<li><label for="walk">Transit</label>
+					<input type="radio" name="transport" value="transit"></li></br>
+					<li><label for="walk">Vehicle</label>
+					<input type="radio" name="transport" value="vehicle"></li></br>
+					<input id="votebutton" class="send" type="submit" name="" value="Vote!">
 				</form>
+				
 
 				<?php
 
-					$file = "data.txt";
-					$handle = fopen($file, "w+") or exit("Can't open file: ".$file);
+					// $file = "data.txt";
+					// $handle = fopen($file, "w+") or exit("Can't open file: ".$file);
 
-					$poll = serialize($transport);
+					// $poll = serialize($transport);
 
-					fwrite($handle, $poll);
+					// fwrite($handle, $poll);
 
-					$display = file_get_contents($file);
-					$display = unserialize($display);
+					// $display = file_get_contents($file);
+					// $data = unserialize($display);
+					// $transport = array_count_values($data);
 
 				?>
 
@@ -105,22 +109,22 @@
 
 				<?php 
 
-					$i = 1;
+				// 	$i = 1;
 
-					foreach ($transport as $type => $trans) {
+				// 	foreach ($transport as $type => $trans) {
 
-						if($i == 1){
-							$first = " blue";
-						}else{
-							$first = "";
-						}
+				// 		if($i == 1){
+				// 			$first = " blue";
+				// 		}else{
+				// 			$first = "";
+				// 		}
 
-						echo "\t<div class ='item".$first."' style ='width: ".$perc[$type]."%;'>".$type." ".$perc[$type]."%</div></br>\r\n";
+				// 		echo "\t<div class ='item".$first."' style ='width: ".$perc[$type]."%;'>".$type." ".$perc[$type]."%</div></br>\r\n";
 			
-						$i++;
-				}			
+				// 		$i++;
+				// }			
 
-					echo "\t<p>Total votes: ".$total."</p>\r\n";
+				// 	echo "\t<p>Total votes: ".$total."</p>\r\n";
 				?>
 
 			</section>

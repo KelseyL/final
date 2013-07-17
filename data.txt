@@ -1,1 +1,1 @@
-a:4:{s:7:"bicycle";i:75;s:7:"vehicle";i:40;s:7:"transit";i:40;s:4:"walk";i:30;}
+a:4:{i:0;s:4:"walk";i:3;s:7:"vehicle";i:2;s:7:"transit";i:1;s:7:"bicycle";}
