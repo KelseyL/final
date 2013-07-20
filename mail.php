@@ -6,21 +6,25 @@
 	$message = $_POST["message"];
 
 	//var_dump($_POST);
+	if ($_POST["submit"] = "Send") {
 
-	$info = "Here is the confirmation email for ".$name." at this address: ".$email;
-
-	$info = wordwrap($message, 70, "\r\n");
-
-	$headers = "From: nobody@whocares.com";
-
-	echo mail("kelshaelaw@gmail.com", "To Confirm", $info, $headers);
+		$info = "Here is the confirmation email for ".$name." at this address: ".$email;
+	
+		$info = wordwrap($message, 70, "\r\n");
+	
+		$headers = "From: nobody@whocares.com";
+	
+		echo mail("kelshaelaw@gmail.com", "To Confirm", $info, $headers);
+	}else{
+		
+	}
 
 	//end of contact mail()
 
 	//create file and write to it
 	$file = "transport.txt";
 
-	$handle = fopen($file, "a+") or exit("Cannot open file: ".$file);
+	$handle = fopen($file, "w+") or exit("Cannot open file: ".$file);
 
 	$transport = [
 		"walk",
@@ -35,7 +39,7 @@
 
 	$display = file_get_contents($file);
 
-	$display = unserialize($data);
+	$display = unserialize($display);
 
 	//$display = array_count_values($transport);
 

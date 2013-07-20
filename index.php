@@ -24,6 +24,8 @@
 <head>
 	<title>Kelsey's Final</title>
 	<link href="css/styles.css" rel="stylesheet">
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/js.js"></script>
 </head>
 
 <body>
@@ -59,11 +61,11 @@
 				<a class="twitt" href="#">Twitter</a><a class="fb" href="#">Facebook</a><a class="goog" href="#">Google</a>
 				<p>This is where you give us your info. If you write us a really sweet 	message or maybe have an idea for what to survey next, write it here.</p> 
 				<p>Leave us your email and we'll let you know how cool your are and send 	you the updated results after you've voted!</p>
-				<form action="mail.php" method="post">
+				<form action="index.php" method="post">
 					<li><label for="name">Name</label><input class="info" type="text" name="name" value=""></li>
 					<li><label for="email">Email</label><input class="info" type="text" name="email" value=""></li>		
 					<li><label for="message">Message</label><textarea class="info" name="message" rows="4" cols="30"></textarea></li>
-					<input id="sendbutton" class="send" type="submit" name="" value="Send">
+					<input id="sendbutton" class="send" type="submit" name="submit" value="Send">
 				</form>
 					
 			</section>
@@ -133,8 +135,7 @@
 
 	</div>	
 
-	<script src="scripts/jquery.min.js"></script>
-	<script src="scripts/js.js"></script>
+
 
 </body>
 </html>
