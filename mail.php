@@ -1,6 +1,6 @@
 <?php
 
-	//start of contact mail()
+//start of contact mail()
 	$name = $_POST["name"];
 	$email = $_POST["email"];
 	$message = $_POST["message"];
@@ -19,9 +19,9 @@
 		
 	}
 
-	//end of contact mail()
+//end of contact mail()
 
-	//create file and write to it
+//create file and write to it
 	$file = "transport.txt";
 
 	$handle = fopen($file, "w+") or exit("Cannot open file: ".$file);
@@ -44,9 +44,9 @@
 	//$display = array_count_values($transport);
 
 	//print_r($display);
-	//end of .txt
+//end of .txt
 
-
+//start of results
 	//this prints results in graph form by percentage
 	$total = 0;
 
@@ -78,6 +78,6 @@
 	}
 
 	echo "\t<p>Total votes: ".$total."</p>\r\n";	
-	//end of results 
+//end of results 
 
 ?>
